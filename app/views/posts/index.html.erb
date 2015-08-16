@@ -4,9 +4,10 @@
 		<% @posts.each do |post| %>
 		<li><%= link_to post.title, post_path(post.id) %>
 			<%= link_to "[Edit]", edit_post_path(post.id) %>
+			<%= link_to "[Delete]", post_path(post.id), method: :delete, data:{confirm: "本当に削除していいいですか？"} %>
 		</li>
 		<% end %>
 	</ul>
 	<p><%= link_to "Add New", new_post_path %></p>
-
+		
 
