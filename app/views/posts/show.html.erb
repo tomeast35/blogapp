@@ -1,7 +1,9 @@
-<h1><%= @post.title%></h1>
+<h1><%= @post.title%></h1><br>
 <p><%= @post.description %></p>
 
-<ul>
+
+
+<ul><strong>コメント一覧</strong>
 	<% @post.comments.each do |comment| %>
 	<li><%= comment.body %>
 	<%= link_to "[削除]", post_comment_path(comment.post_id, comment.id), method: :delete, data:{ confirm: "本当に削除してよろしいですか？"} %>
@@ -14,3 +16,5 @@
 		<% end %>
 	</li>
 </ul>
+
+<p><%= link_to "TOP", posts_path %></p>
